@@ -12,8 +12,9 @@ def main():
         for times in row[3].split():
             # lecture_room, day_of_week, start_time, end_time
             for time, lecture_room in zip(times.split(" "), row[4].split("<br>")):
-                print(lecture_room, time[0], time[2:7], time[8:])
-                c.execute("INSERT INTO timetable VALUES (?, ?, ?, ?)", (lecture_room, time[0], time[2:7], time[8:]))
+                if lecture_room != "":
+                    print(lecture_room, time[0], time[2:7], time[8:])
+                    c.execute("INSERT INTO timetable VALUES (?, ?, ?, ?)", (lecture_room, time[0], time[2:7], time[8:]))
 
     conn.commit()
     conn.close()

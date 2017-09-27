@@ -116,7 +116,7 @@ def main():
     time.sleep(1)
     a.driver.find_element_by_name("p_id").send_keys(kau_id)
     time.sleep(1)
-    a.driver.find_element_by_name("p_pwd").send_keys(kau_pass)
+    a.driver.find_element_by_name("p_pwd").send_keys(kau_pw)
     time.sleep(1)
     a.driver.execute_script("checkForm()")
     time.sleep(1)
